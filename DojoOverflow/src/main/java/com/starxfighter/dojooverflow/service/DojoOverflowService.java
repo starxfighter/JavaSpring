@@ -115,9 +115,9 @@ public class DojoOverflowService {
 			String tempDes = tempQuest.get(x).getQuestiondt();
 			screenData.add(0, tempDes);
 			List<TagQuestion> tempTQ = tagQuestionRepo.findAllByQuestion_id(tempId);
-			for(int z = 1; z < tempTQ.size(); z++) {
+			for(int z = 0; z < tempTQ.size(); z++) {
 				String tempTag = tempTQ.get(z).getTag().getSubject();
-				screenData.add(z, tempTag);
+				screenData.add(tempTag);
 			}
 			hmap.put(tempId, screenData);
 		}
